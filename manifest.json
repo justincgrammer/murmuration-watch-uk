@@ -1,18 +1,26 @@
-{
+﻿{
+  "id": "/murmuration-watch-uk/",
   "name": "Murmuration Watch UK: Kent & Sussex",
   "short_name": "Murmurations",
   "description": "Live starling murmuration roost map, sightings feed, and dusk arrival calculator for Kent & Sussex.",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#0f172a",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/bird.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
