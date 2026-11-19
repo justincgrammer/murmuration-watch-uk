@@ -1,0 +1,233 @@
+[
+  {
+    "site_id": "ROOST-001",
+    "canonical_name": "Rye Harbour Nature Reserve",
+    "county": "East Sussex",
+    "latitude": 50.9315,
+    "longitude": 0.7580,
+    "habitat_type": "Coastal Reedbed & Saltmarsh",
+    "aliases": ["Rye Harbour", "Rye Hbr", "Castle Water", "Rye Bay"],
+    "notes": "Major coastal reedbed roost site near Winchelsea Beach and Castle Water.",
+    "active_status": "Verified Active"
+  },
+  {
+    "site_id": "ROOST-002",
+    "canonical_name": "Dungeness RSPB Reserve",
+    "county": "Kent",
+    "latitude": 50.9165,
+    "longitude": 0.9635,
+    "habitat_type": "Shingle & Reedbed",
+    "aliases": ["Dungeness", "Dungeness Bird Observatory", "DBO", "Boulderwall"],
+    "notes": "Established autumn/winter roost across RSPB reedbeds and Dungeness peninsula.",
+    "active_status": "Verified Active"
+  },
+  {
+    "site_id": "ROOST-003",
+    "canonical_name": "Brighton Palace Pier",
+    "county": "East Sussex",
+    "latitude": 50.8169,
+    "longitude": -0.1367,
+    "habitat_type": "Marine Pier Structure",
+    "aliases": ["Brighton Pier", "Palace Pier", "Brighton Seafront"],
+    "notes": "Iconic under-pier marine roost; birds gather at dusk along the seafront.",
+    "active_status": "Verified Active"
+  },
+  {
+    "site_id": "ROOST-004",
+    "canonical_name": "Eastbourne Pier",
+    "county": "East Sussex",
+    "latitude": 50.7672,
+    "longitude": 0.2928,
+    "habitat_type": "Marine Pier Structure",
+    "aliases": ["Eastbourne", "Eastbourne Seafront"],
+    "notes": "Active coastal pier roost (4,000+ birds recorded Nov 2026).",
+    "active_status": "Verified Active"
+  },
+  {
+    "site_id": "ROOST-005",
+    "canonical_name": "Newhaven Tide Mills & Harbour",
+    "county": "East Sussex",
+    "latitude": 50.7895,
+    "longitude": 0.0620,
+    "habitat_type": "Estuary & Coastal Scrub",
+    "aliases": ["Newhaven", "Tide Mills", "Ouse Estuary"],
+    "notes": "Estuarine roost and staging area along the lower Ouse valley.",
+    "active_status": "Seasonal / Intermittent"
+  },
+  {
+    "site_id": "ROOST-006",
+    "canonical_name": "RSPB Pulborough Brooks",
+    "county": "West Sussex",
+    "latitude": 50.9558,
+    "longitude": -0.5065,
+    "habitat_type": "Floodplain Wetland & Reedbed",
+    "aliases": ["Pulborough Brooks", "Pulborough", "Arun Valley", "Waltham Brooks"],
+    "notes": "Key West Sussex wetland roost site in the Arun Valley.",
+    "active_status": "Verified Active"
+  },
+  {
+    "site_id": "ROOST-007",
+    "canonical_name": "Bletchenden Road, Headcorn",
+    "county": "Kent",
+    "latitude": 51.1555,
+    "longitude": 0.6336,
+    "habitat_type": "Hedgerow & Woodland Scrub",
+    "aliases": ["Bletchenden Road", "Headcorn", "Headcorn Airfield", "Biddenden Road"],
+    "notes": "Dense bushes and trees lining Bletchenden Road opposite Headcorn Airfield.",
+    "active_status": "Verified Active"
+  },
+  {
+    "site_id": "ROOST-008",
+    "canonical_name": "Burnthouse Pen, Lydd",
+    "county": "Kent",
+    "latitude": 50.9449,
+    "longitude": 0.8837,
+    "habitat_type": "Coastal Grazing Marsh",
+    "aliases": ["Burnthouse Pen", "Lydd", "Jury's Gap Road", "Romney Marsh"],
+    "notes": "Wide marshland murmuration north/NW of Lydd Caravan Park off Jury's Gap Road.",
+    "active_status": "Verified Active"
+  },
+  {
+    "site_id": "ROOST-009",
+    "canonical_name": "Dungeness — Hanson ARC Hide",
+    "county": "Kent",
+    "latitude": 50.9391,
+    "longitude": 0.9396,
+    "habitat_type": "Gravel Pit & Reedbed",
+    "aliases": ["Hanson ARC", "ARC Pit", "Hanson Hide", "Dungeness Road"],
+    "notes": "Large reedbed roost 10 minutes walk from Dungeness Road car park.",
+    "active_status": "Verified Active"
+  },
+  {
+    "site_id": "ROOST-010",
+    "canonical_name": "Sandling, Maidstone",
+    "county": "Kent",
+    "latitude": 51.3040,
+    "longitude": 0.5196,
+    "habitat_type": "Farmland & Powerline Staging",
+    "aliases": ["Sandling", "Maidstone", "Boarley Lane", "Tyland Lane"],
+    "notes": "Reactivated Nov 2026 (~500 birds); viewed from Boarley Lane or Tyland Lane.",
+    "active_status": "Verified Active"
+  },
+  {
+    "site_id": "ROOST-011",
+    "canonical_name": "Stodmarsh National Nature Reserve",
+    "county": "Kent",
+    "latitude": 51.3109,
+    "longitude": 1.1880,
+    "habitat_type": "Valley Fen & Reedbed",
+    "aliases": ["Stodmarsh", "Stodmarsh NNR", "Stour Valley"],
+    "notes": "Extensive Stour Valley reedbed and horizon murmuration site.",
+    "active_status": "Verified Active"
+  },
+  {
+    "site_id": "ROOST-012",
+    "canonical_name": "Westbere Marshes & Lakes",
+    "county": "Kent",
+    "latitude": 51.3043,
+    "longitude": 1.1467,
+    "habitat_type": "Lake & Reedbed",
+    "aliases": ["Westbere", "Westbere Marshes", "Westbere Lakes"],
+    "notes": "Dusk lake roost adjacent to Stodmarsh in the Great Stour valley.",
+    "active_status": "Verified Active"
+  },
+  {
+    "site_id": "ROOST-013",
+    "canonical_name": "Bekesbourne (Howletts)",
+    "county": "Kent",
+    "latitude": 51.2695,
+    "longitude": 1.1569,
+    "habitat_type": "Parkland & Woodland",
+    "aliases": ["Bekesbourne", "Howletts"],
+    "notes": "Dusk murmuration observed above Howletts Wild Animal Park.",
+    "active_status": "Verified Active"
+  },
+  {
+    "site_id": "ROOST-014",
+    "canonical_name": "Canterbury (St Dunstan's)",
+    "county": "Kent",
+    "latitude": 51.2819,
+    "longitude": 1.0755,
+    "habitat_type": "Urban & Suburban Trees",
+    "aliases": ["Canterbury", "St Dunstan's", "Rheims Way"],
+    "notes": "Evening murmuration observed off Rheims Way in St Dunstan's.",
+    "active_status": "Seasonal / Intermittent"
+  },
+  {
+    "site_id": "ROOST-015",
+    "canonical_name": "Isle of Sheppey (Elmley & The Fleet)",
+    "county": "Kent",
+    "latitude": 51.3876,
+    "longitude": 0.8284,
+    "habitat_type": "Coastal Grazing Marsh",
+    "aliases": ["Isle of Sheppey", "Sheppey", "Elmley", "Elmley NNR", "The Fleet", "South Swale", "Cleve Marsh"],
+    "notes": "Coastal marshland roost covering Elmley NNR and the Swale shoreline.",
+    "active_status": "Verified Active"
+  },
+  {
+    "site_id": "ROOST-016",
+    "canonical_name": "Teal Way, Iwade (Swale)",
+    "county": "Kent",
+    "latitude": 51.3734,
+    "longitude": 0.7307,
+    "habitat_type": "Suburban Scrub & Marsh Edge",
+    "aliases": ["Iwade", "Teal Way", "Grovehurst Road", "Sittingbourne"],
+    "notes": "Best viewed from Grovehurst Road near Iwade and the Swale estuary.",
+    "active_status": "Verified Active"
+  },
+  {
+    "site_id": "ROOST-017",
+    "canonical_name": "Springhead Parkway, Ebbsfleet",
+    "county": "Kent",
+    "latitude": 51.4387,
+    "longitude": 0.3241,
+    "habitat_type": "Urban Reedbed",
+    "aliases": ["Springhead Parkway", "Ebbsfleet", "Northfleet"],
+    "notes": "Reedbed roost visible from the bridge on Springhead Parkway.",
+    "active_status": "Seasonal / Intermittent"
+  },
+  {
+    "site_id": "ROOST-018",
+    "canonical_name": "Hawkinge, Folkestone",
+    "county": "Kent",
+    "latitude": 51.1147,
+    "longitude": 1.1535,
+    "habitat_type": "Downland Edge & Suburban Trees",
+    "aliases": ["Hawkinge", "Folkestone"],
+    "notes": "Dusk roost observed near Hawkinge Cemetery and Churchill Primary School.",
+    "active_status": "Verified Active"
+  },
+  {
+    "site_id": "ROOST-019",
+    "canonical_name": "Worthing Pier (Southern Pavilion)",
+    "county": "West Sussex",
+    "latitude": 50.8071,
+    "longitude": -0.3688,
+    "habitat_type": "Marine Pier Structure",
+    "aliases": ["Worthing Pier", "Worthing", "Southern Pavilion"],
+    "notes": "Active seafront pier roost (~2,000–3,000 birds recorded Oct 2026).",
+    "active_status": "Verified Active"
+  },
+  {
+    "site_id": "ROOST-020",
+    "canonical_name": "Brighton Marina",
+    "county": "East Sussex",
+    "latitude": 50.8121,
+    "longitude": -0.0985,
+    "habitat_type": "Marina & Breakwater",
+    "aliases": ["Brighton Marina"],
+    "notes": "Coastal marina roost just east of Brighton Palace Pier.",
+    "active_status": "Verified Active"
+  },
+  {
+    "site_id": "ROOST-021",
+    "canonical_name": "Lyons Way, Worthing (A27)",
+    "county": "West Sussex",
+    "latitude": 50.8368,
+    "longitude": -0.3666,
+    "habitat_type": "Suburban Trees & Retail Park",
+    "aliases": ["Lyons Way", "Lyons Farm"],
+    "notes": "Small murmuration gathering above Lyons Farm retail park on the A27.",
+    "active_status": "Seasonal / Intermittent"
+  }
+]

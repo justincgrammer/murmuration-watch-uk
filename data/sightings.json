@@ -1,0 +1,122 @@
+{
+  "metadata": {
+    "schema_version": "1.0",
+    "region": "Kent & Sussex",
+    "last_updated": "2026-11-19T13:19:21Z",
+    "total_sightings": 7,
+    "sources_checked": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004",
+      "SRC-005"
+    ]
+  },
+  "sightings": [
+    {
+      "sighting_id": "dbo-66dddd5dc656",
+      "source_id": "SRC-002",
+      "site_id": "ROOST-002",
+      "site_name": "Dungeness RSPB & Peninsula",
+      "county": "Kent",
+      "observation_date": "2026-11-19",
+      "latitude": 50.9165,
+      "longitude": 0.9635,
+      "coord_source": "roost_lookup",
+      "bird_count": 1329,
+      "activity_type": "Daytime Passage",
+      "raw_notes": "Other birds passing overhead included 195 Stock Doves , a Little Egret , 1329 Starlings , three Redpolls and five Siskins while 11 Chiffchaffs , five Firecrests , nine Redwings and three Fieldfares .",
+      "source_url": "http://www.dungenessbirdobs.org.uk/"
+    },
+    {
+      "sighting_id": "kos-a2fe8a7b6f6c",
+      "source_id": "SRC-003",
+      "site_id": "ROOST-015",
+      "site_name": "South Swale LNR",
+      "county": "Kent",
+      "observation_date": "2026-11-12",
+      "latitude": 51.347,
+      "longitude": 0.9287,
+      "coord_source": "source_gridref",
+      "bird_count": 1000,
+      "activity_type": "Daytime Passage",
+      "raw_notes": "1000 Common Starling (Cleve Marsh)",
+      "source_url": "https://www.kentos.org.uk/index.php/sightings/bird-news?view=news"
+    },
+    {
+      "sighting_id": "suk-025480a3e65a",
+      "source_id": "SRC-004",
+      "site_id": "ROOST-003",
+      "site_name": "Brighton Palace Pier",
+      "county": "East Sussex",
+      "observation_date": "2026-11-08",
+      "latitude": 50.8169,
+      "longitude": -0.1367,
+      "coord_source": "source_kml",
+      "bird_count": 10000,
+      "activity_type": "Murmuration / Roost",
+      "raw_notes": "Reactivated, 08/11/26. Up to 10k Starlings roosting here.",
+      "source_url": "https://www.starlingsintheuk.co.uk/roost-map.html"
+    },
+    {
+      "sighting_id": "kos-8a3281482a31",
+      "source_id": "SRC-003",
+      "site_id": null,
+      "site_name": "North Foreland",
+      "county": "Kent",
+      "observation_date": "2026-11-06",
+      "latitude": 51.376,
+      "longitude": 1.4494,
+      "coord_source": "source_gridref",
+      "bird_count": 140,
+      "activity_type": "Daytime Passage",
+      "raw_notes": "140 Common Starling (P 3",
+      "source_url": "https://www.kentos.org.uk/index.php/sightings/bird-news?view=news"
+    },
+    {
+      "sighting_id": "kos-6111ab675011",
+      "source_id": "SRC-003",
+      "site_id": "ROOST-015",
+      "site_name": "South Swale LNR",
+      "county": "Kent",
+      "observation_date": "2026-11-04",
+      "latitude": 51.347,
+      "longitude": 0.9287,
+      "coord_source": "source_gridref",
+      "bird_count": 1000,
+      "activity_type": "Daytime Passage",
+      "raw_notes": "1000 Common Starling (Cleve Marsh)",
+      "source_url": "https://www.kentos.org.uk/index.php/sightings/bird-news?view=news"
+    },
+    {
+      "sighting_id": "suk-449859d100cc",
+      "source_id": "SRC-004",
+      "site_id": "ROOST-004",
+      "site_name": "Eastbourne Pier",
+      "county": "East Sussex",
+      "observation_date": "2026-11-04",
+      "latitude": 50.7672,
+      "longitude": 0.2928,
+      "coord_source": "source_kml",
+      "bird_count": 4000,
+      "activity_type": "Murmuration / Roost",
+      "raw_notes": "Update, Eastbourne pier, 4.05-4.20pm, 4/11/26. Rough count from photo gave well over 4,000 birds.",
+      "source_url": "https://www.starlingsintheuk.co.uk/roost-map.html"
+    },
+    {
+      "sighting_id": "suk-5d7ad957e7f4",
+      "source_id": "SRC-004",
+      "site_id": "ROOST-010",
+      "site_name": "Sandling, Maidstone",
+      "county": "Kent",
+      "observation_date": "2026-11-01",
+      "latitude": 51.304,
+      "longitude": 0.5196,
+      "coord_source": "source_kml",
+      "bird_count": 500,
+      "activity_type": "Murmuration / Roost",
+      "raw_notes": "Reactivated, 01/11/26. Around 500 at dusk/dawn. Viewing from Boarley Lane looking west or along Tyland Lane looking north across the fields. They gather on the High Voltage wires and pylons in the vineyard. Probably a good view from the Halloween pumpkin fields off of Old Chatham Road.",
+      "source_url": "https://www.starlingsintheuk.co.uk/roost-map.html"
+    }
+  ]
+}

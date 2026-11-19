@@ -1,0 +1,27 @@
+================================================== 
+Run started: 19/11/2026 13:19:10.80 
+Saved 7 v1.0 sighting(s) across Kent & Sussex to C:\Python\murmuration_watch_uk\data\sightings.json
+ - [dbo-66dddd5dc656] (Kent) Dungeness RSPB & Peninsula | Date: 2026-11-19 | Count: 1329 | Daytime Passage
+ - [kos-a2fe8a7b6f6c] (Kent) South Swale LNR | Date: 2026-11-12 | Count: 1000 | Daytime Passage
+ - [suk-025480a3e65a] (East Sussex) Brighton Palace Pier | Date: 2026-11-08 | Count: 10000 | Murmuration / Roost
+ - [kos-8a3281482a31] (Kent) North Foreland | Date: 2026-11-06 | Count: 140 | Daytime Passage
+ - [kos-6111ab675011] (Kent) South Swale LNR | Date: 2026-11-04 | Count: 1000 | Daytime Passage
+ - [suk-449859d100cc] (East Sussex) Eastbourne Pier | Date: 2026-11-04 | Count: 4000 | Murmuration / Roost
+ - [suk-5d7ad957e7f4] (Kent) Sandling, Maidstone | Date: 2026-11-01 | Count: 500 | Murmuration / Roost
+=== MURMURATION WATCH UK: DATA PIPELINE AUDIT ===
+
+[1] Master Roosts Loaded: 21 canonical sites
+    [PASS] All site_id primary keys are unique.
+
+[2] Sightings Feed Loaded: 7 records (Schema v1.0)
+    Last Updated: 2026-11-19T13:19:21Z | Sources Checked: ['SRC-001', 'SRC-002', 'SRC-003', 'SRC-004', 'SRC-005']
+
+[3] Breakdown by Source & County:
+    Sources : {'SRC-002': 1, 'SRC-003': 3, 'SRC-004': 3}
+    Counties: {'Kent': 5, 'East Sussex': 2}
+    Activity: {'Daytime Passage': 4, 'Murmuration / Roost': 3}
+
+[4] Audit Verdict:
+    [PASS] Zero schema, key, date, or geographic boundary errors.
+    [PASS] Zero cross-source collisions or count anomalies.
+Run finished: 19/11/2026 13:19:22.11 
