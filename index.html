@@ -83,7 +83,7 @@
                     </div>
                     <div>
                         <h1 class="text-lg sm:text-xl font-bold tracking-tight text-white">Murmuration Watch UK</h1>
-                        <p class="text-xs text-slate-400">Kent & Sussex â€¢ OpenStreetMap SPA</p>
+                        <p class="text-xs text-slate-400">Kent & Sussex • OpenStreetMap SPA</p>
                     </div>
                 </div>
 
@@ -131,7 +131,7 @@
                             <h2 class="text-lg font-semibold text-white">Interactive Sightings & Roost Map</h2>
                             <span id="data-source-badge" class="text-[11px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">Loading data...</span>
                         </div>
-                        <p class="text-xs text-slate-400">OpenStreetMap tiles with custom twilight mode â€¢ Shows roost sites and scraped sightings.</p>
+                        <p class="text-xs text-slate-400">OpenStreetMap tiles with custom twilight mode • Shows roost sites and scraped sightings.</p>
                     </div>
                     
                     <!-- County Filter Pills -->
@@ -372,8 +372,8 @@
     <!-- Footer -->
     <footer class="bg-slate-900 border-t border-slate-800 py-4 mt-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
-            <p>Murmuration Watch UK: Kent & Sussex â€¢ Co-developed by Justin Grammer</p>
-            <p>Map data Â© OpenStreetMap contributors â€¢ Local-first SPA</p>
+            <p>Murmuration Watch UK: Kent & Sussex • Co-developed by Justin Grammer</p>
+            <p>Map data © OpenStreetMap contributors • Local-first SPA</p>
         </div>
     </footer>
     <script>
@@ -483,7 +483,7 @@
         const map = L.map('map').setView([51.08, 0.55], 9);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: 'Â© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             maxZoom: 18,
             className: 'twilight-tiles'
         }).addTo(map);
@@ -650,7 +650,7 @@
                             <div class="p-1 space-y-1 min-w-[190px]">
                                 <div class="text-xs font-semibold uppercase tracking-wider text-amber-400">Recent Sighting</div>
                                 <div class="font-bold text-sm text-white">${s.location}</div>
-                                <div class="text-xs text-slate-300">${s.size} â€¢ ${s.activity}</div>
+                                <div class="text-xs text-slate-300">${s.size} • ${s.activity}</div>
                                 <div class="text-xs text-slate-400">${s.date}</div>
                             </div>
                         `);
@@ -806,3 +806,4 @@
     </script>
 </body>
 </html>
+
