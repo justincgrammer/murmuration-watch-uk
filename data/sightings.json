@@ -2,8 +2,8 @@
   "metadata": {
     "schema_version": "1.0",
     "region": "Kent & Sussex",
-    "last_updated": "2026-11-20T00:31:52Z",
-    "total_sightings": 8,
+    "last_updated": "2026-11-21T00:34:38Z",
+    "total_sightings": 9,
     "sources_checked": [
       "SRC-001",
       "SRC-002",
@@ -13,6 +13,21 @@
     ]
   },
   "sightings": [
+    {
+      "sighting_id": "dbo-c88ebfd07939",
+      "source_id": "SRC-002",
+      "site_id": "ROOST-002",
+      "site_name": "Dungeness RSPB & Peninsula",
+      "county": "Kent",
+      "observation_date": "2026-11-21",
+      "latitude": 50.9165,
+      "longitude": 0.9635,
+      "coord_source": "roost_lookup",
+      "bird_count": 1329,
+      "activity_type": "Daytime Passage",
+      "raw_notes": "Other birds passing overhead included 195 Stock Doves , a Little Egret , 1329 Starlings , three Redpolls and five Siskins while 11 Chiffchaffs , five Firecrests , nine Redwings and three Fieldfares .",
+      "source_url": "http://www.dungenessbirdobs.org.uk/"
+    },
     {
       "sighting_id": "dbo-52868f86e6d7",
       "source_id": "SRC-002",
