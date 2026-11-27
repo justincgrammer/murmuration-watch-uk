@@ -2,17 +2,34 @@
   "metadata": {
     "schema_version": "1.0",
     "region": "Kent & Sussex",
-    "last_updated": "2026-11-27T00:44:20Z",
-    "total_sightings": 10,
+    "last_updated": "2026-11-27T15:25:37Z",
+    "total_sightings": 12,
     "sources_checked": [
       "SRC-001",
       "SRC-002",
       "SRC-003",
       "SRC-004",
-      "SRC-005"
+      "SRC-005",
+      "SRC-006",
+      "SRC-007"
     ]
   },
   "sightings": [
+    {
+      "sighting_id": "dbo-07473303e45a",
+      "source_id": "SRC-002",
+      "site_id": "ROOST-002",
+      "site_name": "Dungeness RSPB & Peninsula",
+      "county": "Kent",
+      "observation_date": "2026-11-27",
+      "latitude": 50.9165,
+      "longitude": 0.9635,
+      "coord_source": "roost_lookup",
+      "bird_count": 1045,
+      "activity_type": "Daytime Passage",
+      "raw_notes": "Two Woodcocks , a Merlin , 13 Chiffchaffs , a \" Siberian\" Chiffchaff , a Dartford Warbler , 15 Goldcrests , four Firecrests and two Fieldfares were seen in the bushes and a late Swallow , 1045 Starlings , 15 Chaffinches , 57 Goldfinches and four Siskins flew over.",
+      "source_url": "http://www.dungenessbirdobs.org.uk/"
+    },
     {
       "sighting_id": "dbo-c47f0940621a",
       "source_id": "SRC-002",
@@ -72,6 +89,21 @@
       "activity_type": "Daytime Passage",
       "raw_notes": "Other birds passing overhead included 195 Stock Doves , a Little Egret , 1329 Starlings , three Redpolls and five Siskins while 11 Chiffchaffs , five Firecrests , nine Redwings and three Fieldfares .",
       "source_url": "http://www.dungenessbirdobs.org.uk/"
+    },
+    {
+      "sighting_id": "rspb_lm-60eef14e04c9",
+      "source_id": "SRC-006",
+      "site_id": "ROOST-NW-LEIGHTON",
+      "site_name": "RSPB Leighton Moss (Silverdale)",
+      "county": "Lancashire",
+      "observation_date": "2026-11-18",
+      "latitude": 54.1678,
+      "longitude": -2.7965,
+      "coord_source": "roost_lookup",
+      "bird_count": 50000,
+      "activity_type": "Murmuration / Roost",
+      "raw_notes": "Updated 18 November Main Reserve Up to 50,000 Starlings have been coming in to roost on the main reserve, best seen from the Skytower.",
+      "source_url": "https://www.rspb.org.uk/days-out/reserves/leighton-moss"
     },
     {
       "sighting_id": "kos-a2fe8a7b6f6c",

@@ -45,7 +45,7 @@ class SightingCreate(BaseModel):
     longitude: float = Field(..., ge=-9.0, le=2.5)
     observed_date: str = Field(..., pattern=r"^\d{4}-\d{2}-\d{2}$")
     observed_time: Optional[str] = Field(default=None, max_length=10)
-    flock_size: Optional[str] = Field(default="Medium (1,000–5,000)", max_length=60)
+    flock_size: Optional[str] = Field(default="Medium (1,000Ã¢â‚¬â€œ5,000)", max_length=60)
     display_quality: Optional[int] = Field(default=3, ge=1, le=5)
     weather_summary: Optional[str] = Field(default=None, max_length=100)
     behaviour_notes: Optional[str] = Field(default="", max_length=600)
@@ -217,13 +217,13 @@ def get_dusk_forecast(
     sunset_iso = daily["sunset"][0]
 
     if rain_prob >= 65 or wind_mph >= 25:
-        outlook = "Poor — High wind/rain; birds likely to drop straight to roost early."
+        outlook = "Poor Ã¢â‚¬â€ High wind/rain; birds likely to drop straight to roost early."
         rating = "low"
     elif rain_prob >= 35 or wind_mph >= 16:
-        outlook = "Fair — Breezy or patchy showers; shorter pre-roost flight expected."
+        outlook = "Fair Ã¢â‚¬â€ Breezy or patchy showers; shorter pre-roost flight expected."
         rating = "moderate"
     else:
-        outlook = "Prime — Calm, dry dusk conditions ideal for tight aerial shapes."
+        outlook = "Prime Ã¢â‚¬â€ Calm, dry dusk conditions ideal for tight aerial shapes."
         rating = "high"
 
     return {
@@ -324,7 +324,13 @@ def serve_index():
 
 @app.get("/{file_name}")
 def serve_root_files(file_name: str):
-    allowed = {"manifest.json", "sw.js", "index.html"}
+    allowed = {"manifest.json", "sw.js", "index.html", "murmuration-watch-uk.apk"}
     if file_name in allowed and (ROOT_DIR / file_name).exists():
+        if file_name.endswith(".apk"):
+            return FileResponse(
+                ROOT_DIR / file_name,
+                media_type="application/vnd.android.package-archive",
+                filename="murmuration-watch-uk.apk",
+            )
         return FileResponse(ROOT_DIR / file_name)
     raise HTTPException(status_code=404, detail="Not found")

@@ -151,7 +151,7 @@ NORTH_WEST_ROOSTS = [
         "best_months": "Oct-Feb",
         "reliability": "Very High",
         "status": "active",
-        "notes": "Largest reedbed in North West England; 10,000–50,000+ starlings regularly gather at dusk, just 20 mins south of Kendal.",
+        "notes": "Largest reedbed in North West England; 10,000Ã¢â‚¬â€œ50,000+ starlings regularly gather at dusk, just 20 mins south of Kendal.",
     },
     {
         "county_slug": "lancashire",
@@ -351,35 +351,46 @@ def seed_all() -> None:
             if isinstance(raw_sightings, dict):
                 raw_sightings = raw_sightings.get("sightings", [])
 
-            existing_count = conn.execute("SELECT COUNT(*) FROM sightings").fetchone()[0]
-            if existing_count == 0:
-                for s in raw_sightings:
-                    lat = s.get("lat") if s.get("lat") is not None else s.get("latitude")
-                    lng = s.get("lng") if s.get("lng") is not None else s.get("longitude")
-                    if lat is None or lng is None:
-                        continue
-                    cid = infer_county_id(float(lat), float(lng), county_map)
-                    conn.execute(
-                        """
-                        INSERT INTO sightings (
-                            county_id, custom_location_name, latitude, longitude,
-                            observed_date, observed_time, flock_size, behaviour_notes, source
-                        )
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-                        """,
-                        (
-                            cid,
-                            s.get("location") or s.get("site_name") or "Imported Sighting",
-                            float(lat),
-                            float(lng),
-                            s.get("date") or s.get("observed_date") or "2026-11-01",
-                            s.get("time") or s.get("observed_time"),
-                            str(s.get("flock_size") or s.get("count") or ""),
-                            s.get("notes") or s.get("behaviour_notes") or "",
-                            s.get("source") or "scraper",
-                        ),
+            for s in raw_sightings:
+                lat = s.get("lat") if s.get("lat") is not None else s.get("latitude")
+                lng = s.get("lng") if s.get("lng") is not None else s.get("longitude")
+                if lat is None or lng is None:
+                    continue
+                loc_name = s.get("location") or s.get("site_name") or "Imported Sighting"
+                obs_date = s.get("date") or s.get("observed_date") or "2026-11-01"
+                flock_val = str(s.get("flock_size") or s.get("bird_count") or s.get("count") or "")
+                notes_val = s.get("notes") or s.get("raw_notes") or s.get("behaviour_notes") or ""
+                src_val = s.get("source") or s.get("source_id") or "scraper"
+
+                dup = conn.execute(
+                    "SELECT 1 FROM sightings WHERE custom_location_name = ? AND observed_date = ? AND behaviour_notes = ?",
+                    (loc_name, obs_date, notes_val),
+                ).fetchone()
+                if dup:
+                    continue
+
+                cid = infer_county_id(float(lat), float(lng), county_map)
+                conn.execute(
+                    """
+                    INSERT INTO sightings (
+                        county_id, custom_location_name, latitude, longitude,
+                        observed_date, observed_time, flock_size, behaviour_notes, source
                     )
-                    imported_sightings += 1
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        cid,
+                        loc_name,
+                        float(lat),
+                        float(lng),
+                        obs_date,
+                        s.get("time") or s.get("observed_time"),
+                        flock_val,
+                        notes_val,
+                        src_val,
+                    ),
+                )
+                imported_sightings += 1
 
         summary = conn.execute(
             """

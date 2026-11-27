@@ -66,6 +66,10 @@ def infer_county(text, lat, lon, matched_roost):
         return "West Sussex"
     if "east sussex" in lower or any(k in lower for k in ["hastings", "rye", "brighton", "eastbourne", "newhaven", "pevensey", "seaford", "cuckmere"]):
         return "East Sussex"
+    if any(k in lower for k in ["cumbria", "kendal", "walney", "barrow", "arnside", "grange", "siddick", "workington", "watchtree", "solway", "silloth", "foulshaw"]):
+        return "Cumbria"
+    if any(k in lower for k in ["lancashire", "leighton moss", "morecambe", "heysham", "silverdale", "carnforth", "martin mere", "blackpool", "brockholes", "glasson", "lune"]):
+        return "Lancashire"
     if lon is not None and lon >= 0.80:
         return "Kent"
     return None
@@ -82,7 +86,7 @@ def classify_activity(notes):
 def extract_bird_count(notes):
     """Extract numerical flock estimate (e.g. 'c. 5,000', '2k-3k', '1000 Common Starling') as int."""
     # Handle shorthand ranges like '2k-3k' or '2k'
-    k_range = re.search(r"\b(\d+(?:\.\d+)?)\s*k\s*[-–to]+\s*(\d+(?:\.\d+)?)\s*k\b", notes, re.IGNORECASE)
+    k_range = re.search(r"\b(\d+(?:\.\d+)?)\s*k\s*[-â€“to]+\s*(\d+(?:\.\d+)?)\s*k\b", notes, re.IGNORECASE)
     if k_range:
         low, high = float(k_range.group(1)) * 1000, float(k_range.group(2)) * 1000
         return int((low + high) / 2)
@@ -513,6 +517,91 @@ def fetch_src_005_swt_rye(roost_sites):
     return records
 
 
+def fetch_src_006_leighton_moss(roost_sites):
+    url = "https://www.rspb.org.uk/days-out/reserves/leighton-moss"
+    records = []
+    try:
+        res = requests.get(url, headers=HEADERS, timeout=15)
+        res.raise_for_status()
+        soup = BeautifulSoup(res.text, "html.parser")
+        full_text = " ".join(soup.get_text(" ").split())
+
+        now = datetime.now(timezone.utc)
+        obs_date = now.strftime("%Y-%m-%d")
+        upd = re.search(r"Updated\s+(\d{1,2}\s+[A-Za-z]+)(?:\s+(20\d{2}))?", full_text, re.IGNORECASE)
+        if upd:
+            yr = upd.group(2) if upd.group(2) else str(now.year)
+            parsed = parse_uk_date(f"{upd.group(1)} {yr}")
+            if parsed:
+                if parsed > now.strftime("%Y-%m-%d"):
+                    parsed = parse_uk_date(f"{upd.group(1)} {now.year - 1}") or parsed
+                obs_date = parsed
+
+        for sentence in re.split(r"(?<=[.!?])\s+", full_text):
+            low = sentence.lower()
+            if "starling" in low and len(sentence) < 350:
+                records.append({
+                    "sighting_id": make_id("rspb_lm", f"{obs_date}-{sentence[:50]}"),
+                    "source_id": "SRC-006",
+                    "site_id": "ROOST-NW-LEIGHTON",
+                    "site_name": "RSPB Leighton Moss (Silverdale)",
+                    "county": "Lancashire",
+                    "observation_date": obs_date,
+                    "latitude": 54.1678,
+                    "longitude": -2.7965,
+                    "coord_source": "roost_lookup",
+                    "bird_count": extract_bird_count(sentence),
+                    "activity_type": classify_activity(sentence),
+                    "raw_notes": sentence[:240],
+                    "source_url": url
+                })
+    except Exception as exc:
+        print(f"[WARN] SRC-006 (Leighton Moss) fetch issue: {exc}")
+    return records
+
+
+def fetch_src_007_walney_bo(roost_sites):
+    rss_url = "http://walneybo.blogspot.com/feeds/posts/default?alt=rss"
+    records = []
+    try:
+        res = requests.get(rss_url, headers=HEADERS, timeout=15)
+        res.raise_for_status()
+        root = ET.fromstring(res.text)
+        for item in root.findall("./channel/item")[:10]:
+            title = (item.findtext("title") or "").strip()
+            link = (item.findtext("link") or "https://walneybo.blogspot.com/").strip()
+            pub_raw = (item.findtext("pubDate") or "").strip()
+            desc_html = item.findtext("description") or ""
+            desc_text = " ".join(BeautifulSoup(desc_html, "html.parser").get_text(" ").split())
+
+            obs_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+            dm = re.search(r"(\d{1,2}\s+[A-Za-z]{3,9}\s+20\d{2})", pub_raw)
+            if dm:
+                obs_date = parse_uk_date(dm.group(1)) or obs_date
+
+            for sentence in re.split(r"(?<=[.!?])\s+", f"{title}. {desc_text}"):
+                low = sentence.lower()
+                if ("starling" in low or "murmuration" in low) and len(sentence) < 350:
+                    records.append({
+                        "sighting_id": make_id("walney", f"{obs_date}-{sentence[:50]}"),
+                        "source_id": "SRC-007",
+                        "site_id": "ROOST-NW-WALNEY",
+                        "site_name": "North Walney & Jubilee Bridge (Barrow-in-Furness)",
+                        "county": "Cumbria",
+                        "observation_date": obs_date,
+                        "latitude": 54.1135,
+                        "longitude": -3.2412,
+                        "coord_source": "roost_lookup",
+                        "bird_count": extract_bird_count(sentence),
+                        "activity_type": classify_activity(sentence),
+                        "raw_notes": sentence[:240],
+                        "source_url": link
+                    })
+    except Exception as exc:
+        print(f"[WARN] SRC-007 (Walney BO) fetch issue: {exc}")
+    return records
+
+
 def main():
     roost_sites = load_roost_sites()
     existing = load_existing_sightings()
@@ -523,6 +612,8 @@ def main():
     fresh.extend(fetch_src_003_kos(roost_sites))
     fresh.extend(fetch_src_004_starlings_uk(roost_sites))
     fresh.extend(fetch_src_005_swt_rye(roost_sites))
+    fresh.extend(fetch_src_006_leighton_moss(roost_sites))
+    fresh.extend(fetch_src_007_walney_bo(roost_sites))
 
     # Non-destructive merge: retain records within RETENTION_DAYS and overwrite with fresher updates
     cutoff = (datetime.now(timezone.utc) - timedelta(days=RETENTION_DAYS)).strftime("%Y-%m-%d")
@@ -543,7 +634,7 @@ def main():
             "region": "Kent & Sussex",
             "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "total_sightings": len(deduped),
-            "sources_checked": ["SRC-001", "SRC-002", "SRC-003", "SRC-004", "SRC-005"]
+            "sources_checked": ["SRC-001", "SRC-002", "SRC-003", "SRC-004", "SRC-005", "SRC-006", "SRC-007"]
         },
         "sightings": deduped
     }
