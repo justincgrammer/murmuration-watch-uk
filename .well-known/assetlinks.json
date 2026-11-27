@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.justincgrammer.twa",
+      "sha256_cert_fingerprints": [
+        "F7:D2:48:4D:D8:AD:BF:5A:F5:3E:D2:2A:1F:FB:C7:05:26:D8:40:F1:F7:2C:8F:75:68:7D:8B:66:D8:7E:4C:72"
+      ]
+    }
+  }
+]
