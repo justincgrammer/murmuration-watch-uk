@@ -1,0 +1,11 @@
+.git
+.github
+android-apk
+web
+src
+__pycache__
+*.db
+*.db-shm
+*.db-wal
+*.bak
+pipeline.log
